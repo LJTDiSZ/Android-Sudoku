@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.AlertDialog;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, Prefs.class));
             return true;
         }
 
@@ -56,5 +59,31 @@ public class MainActivity extends AppCompatActivity {
     public void buttonAboutClick(View view) {
         Intent i = new Intent(this, about.class);
         startActivity(i);
+    }
+
+    public void buttonNewGameClick(View view) {
+        openNewGameDialog();
+    }
+
+    private static final String TAG = "Sudoku";
+
+    private void openNewGameDialog(){
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.new_game_title)
+                .setItems(R.array.difficulty,
+                        new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialoginterface, int i){
+                                startGame(i);
+                            }
+                        })
+                .show();
+    }
+
+    private void startGame(int i) {
+        Log.d(TAG, "clicked on " + i);
+    }
+
+    public void buttonExitClick(View view) {
+        finish();
     }
 }

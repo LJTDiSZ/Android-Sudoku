@@ -31,7 +31,8 @@
             android:id="@+id/new_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_game_label"/>
+            android:text="@string/new_game_label"
+            android:onClick="buttonNewGameClick"/>
         <Button
             android:id="@+id/about_button"
             android:layout_width="match_parent"
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/exit_label"
-            android:id="@+id/exit_button" />
+            android:id="@+id/exit_button"
+            android:onClick="buttonExitClick"/>
     </LinearLayout>
 </LinearLayout>
