@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void startGame(int i) {
         Log.d(TAG, "clicked on " + i);
+        Intent intent = new Intent(this, Game.class);
+        intent.putExtra(Game.KEY_DIFFICULTY, i);
+        startActivity(intent);
     }
 
     public void buttonExitClick(View view) {
