@@ -89,4 +89,20 @@ public class MainActivity extends AppCompatActivity {
     public void buttonExitClick(View view) {
         finish();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Music.play(this, R.raw.main);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Music.stop(this);
+    }
+
+    public void buttonContinueClick(View view) {
+        startGame(Game.DIFFICULTY_CONTINUE);
+    }
 }

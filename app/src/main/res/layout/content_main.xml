@@ -26,7 +26,8 @@
             android:id="@+id/continue_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/continue_label"/>
+            android:text="@string/continue_label"
+            android:onClick="buttonContinueClick"/>
         <Button
             android:id="@+id/new_button"
             android:layout_width="match_parent"
