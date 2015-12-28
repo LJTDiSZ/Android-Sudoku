@@ -24,6 +24,7 @@
             android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".Prefs"
+            android:theme="@android:style/Theme"
             android:label="@string/settings_title" />
         <activity android:name=".Game"
             android:label="@string/game_title" />
